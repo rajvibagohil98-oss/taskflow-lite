@@ -28,23 +28,13 @@ function createTask(text) {
     };
 }
 
-// 4. Update Counter + Render Function
+// 4. Update Counter + Render UI
 function updateUI() {
-    renderTasks(
-        tasks,
-        taskList,
-        emptyState,
-        currentFilter
-    );
+    renderTasks(tasks, taskList, emptyState, currentFilter);
 
     totalTasks.textContent = tasks.length;
-
-    const completed = tasks.filter(
-        task => task.completed
-    ).length;
-
+    const completed = tasks.filter(task => task.completed).length;
     completedTasks.textContent = completed;
-
     pendingTasks.textContent = tasks.length - completed;
 }
 
@@ -63,18 +53,14 @@ taskForm.addEventListener("submit", (e) => {
     errorMessage.textContent = "";
 
     const newTask = createTask(text);
-
-    // unshift વાપરવાથી નવો ટાસ્ક લિસ્ટમાં સૌથી ઉપર ઉમેરાશે
-    tasks.unshift(newTask);
+    tasks.unshift(newTask); // Add to the top of list
 
     saveTasks(tasks);
-
     taskInput.value = "";
-
     updateUI();
 });
 
-// 6. Real-time Input Error Clear
+// 6. Real-time Input Validation Clear
 taskInput.addEventListener("input", () => {
     if (errorMessage.textContent) {
         errorMessage.textContent = "";
@@ -83,8 +69,9 @@ taskInput.addEventListener("input", () => {
 
 // 7. Event Delegation - Delete Task
 taskList.addEventListener("click", (e) => {
-    if (e.target.classList.contains("delete-btn")) {
-        const id = Number(e.target.dataset.id);
+    const deleteBtn = e.target.closest(".delete-btn");
+    if (deleteBtn) {
+        const id = Number(deleteBtn.dataset.id);
         deleteTask(id);
     }
 });
@@ -112,34 +99,25 @@ function toggleTask(id) {
 
 // 10. Delete Task Logic
 function deleteTask(id) {
-    const confirmDelete = confirm(
-        "Are you sure you want to delete this task?"
-    );
+    const confirmDelete = confirm("Are you sure you want to delete this task?");
 
     if (confirmDelete) {
-        tasks = tasks.filter(
-            task => task.id !== id
-        );
-
+        tasks = tasks.filter(task => task.id !== id);
         saveTasks(tasks);
         updateUI();
     }
 }
 
-// 11. Filter System Logic
+// 11. Filter Logic
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
+        filterButtons.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
 
         currentFilter = button.dataset.filter;
-
         updateUI();
     });
 });
 
-// 12. Initial Application Render (ફાઈલના અંતમાં બોલાવવું)
+// 12. Initial Load
 updateUI();
