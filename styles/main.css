@@ -1,0 +1,282 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+}
+
+
+.container{
+
+    width:100%;
+    max-width:650px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+
+}
+
+
+
+/* Header */
+
+.header{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+
+.header h1{
+
+    color:#5b21b6;
+    margin-bottom:8px;
+
+}
+
+
+.header p{
+
+    color:#666;
+
+}
+
+
+
+/* Form */
+
+.task-form form{
+
+    display:flex;
+    gap:10px;
+
+}
+
+
+.task-form input{
+
+    flex:1;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+
+}
+
+
+.task-form input:focus{
+
+    border-color:#5b21b6;
+
+}
+
+
+
+.task-form button{
+
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#5b21b6;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+
+}
+
+
+.task-form button:hover{
+
+    opacity:0.9;
+
+}
+
+
+
+#errorMessage{
+
+    color:red;
+    margin-top:8px;
+    font-size:14px;
+
+}
+
+
+
+/* Filters */
+
+.filters{
+
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:25px 0;
+
+}
+
+
+.filter-btn{
+
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#eee;
+
+}
+
+
+.filter-btn.active{
+
+    background:#5b21b6;
+    color:white;
+
+}
+
+
+
+/* Statistics */
+
+.stats{
+
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:25px;
+
+}
+
+
+.stats div{
+
+    flex:1;
+    text-align:center;
+    padding:15px;
+    border-radius:15px;
+    background:#f3f4f6;
+
+}
+
+
+.stats h3{
+
+    color:#5b21b6;
+    font-size:25px;
+
+}
+
+
+
+/* Task List */
+
+#taskList{
+
+    list-style:none;
+
+}
+
+
+.task-item{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    background:#f9fafb;
+    border-radius:12px;
+    margin-bottom:12px;
+
+}
+
+
+.task-left{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+
+.task-text.completed{
+
+    text-decoration:line-through;
+    opacity:0.5;
+
+}
+
+
+.actions button{
+
+    border:none;
+    padding:7px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-left:5px;
+
+}
+
+
+.complete-btn{
+
+    background:#22c55e;
+    color:white;
+
+}
+
+
+.delete-btn{
+
+    background:#ef4444;
+    color:white;
+
+}
+
+
+
+/* Empty State */
+
+#emptyState{
+
+    text-align:center;
+    padding:20px;
+    color:#777;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .task-form form{
+
+        flex-direction:column;
+
+    }
+
+
+    .stats{
+
+        flex-direction:column;
+
+    }
+
+
+}

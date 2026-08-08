@@ -1,0 +1,136 @@
+/* Utility Classes */
+
+
+/* Hide Element */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+
+/* Flex Utilities */
+
+.flex{
+
+    display:flex;
+
+}
+
+
+.flex-center{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+
+.flex-between{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+
+/* Spacing Utilities */
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+
+.mb-10{
+
+    margin-bottom:10px;
+
+}
+
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Text Utilities */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+
+.text-danger{
+
+    color:red;
+
+}
+
+
+.text-success{
+
+    color:green;
+
+}
+
+
+
+/* Button Utility */
+
+.btn{
+
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+    padding:8px 15px;
+
+}
+
+
+
+/* Animation */
+
+.fade-in{
+
+    animation:fadeIn .3s ease;
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}

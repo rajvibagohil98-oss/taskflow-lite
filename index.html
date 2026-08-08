@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow Lite | Task Manager</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <h1>🚀 TaskFlow Lite</h1>
+            <p>Your client-side task management solution</p>
+        </header>
+
+
+        <!-- Task Form -->
+
+        <section class="task-form">
+
+            <form id="taskForm">
+
+                <input 
+                type="text" 
+                id="taskInput"
+                placeholder="Enter your task..."
+                autocomplete="off">
+
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </form>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+
+
+        <!-- Filters -->
+
+        <section class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="active">
+                Active
+            </button>
+
+            <button class="filter-btn" data-filter="completed">
+                Completed
+            </button>
+
+        </section>
+
+
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div>
+                <h3 id="totalTasks">0</h3>
+                <span>Total</span>
+            </div>
+
+
+            <div>
+                <h3 id="completedTasks">0</h3>
+                <span>Completed</span>
+            </div>
+
+
+            <div>
+                <h3 id="pendingTasks">0</h3>
+                <span>Pending</span>
+            </div>
+
+        </section>
+
+
+
+        <!-- Task List -->
+
+        <section>
+
+            <ul id="taskList">
+
+            </ul>
+
+
+            <div id="emptyState">
+
+                📝 No tasks available.
+                <br>
+                Add your first task!
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+
+</html>
